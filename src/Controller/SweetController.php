@@ -32,4 +32,12 @@ class SweetController extends AbstractController
     {
         return $this->render('sweet/new.html.twig');
     }
+
+    /**
+     * @Route("/ingredients/13", name = "ingredients")
+     */
+    public function ingredients() 
+    {
+        return $this->render('sweet/ingredients.html.twig');
+    }
 }

@@ -3,14 +3,57 @@
 {% block title %}Rose de Damas{% endblock %}
 
 {% block body %}
-<p></p>
-<div class="card border-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header">{{nomPatisserie}}</div>
-  <div class="card-body">
-    <h4 class="card-title">{{nomPatisserie}}</h4>
-      <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
-    <p class="card-text">Amandes, Orange</p>
-  </div>
-</div>
+</p>
+<section class ="sweets">
+  <div align ="center">
 
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header">{{nomPatisserie}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{nomPatisserie}}</h4>
+          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
+        <p class="card-text">Amandes, Orange</p>
+        <a href="{{ path("ingredients") }}" class ="btn btn-primary">Ingrédients </a>  
+      </div>
+    </div>
+
+
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header">{{nomPatisserie}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{nomPatisserie}}</h4>
+          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
+        <p class="card-text">Amandes, Orange</p>
+        <a href="{{path("ingredients")}}" class ="btn btn-primary">Ingrédients </a>  
+      </div>
+    </div>
+
+
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header">{{nomPatisserie}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{nomPatisserie}}</h4>
+          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
+        <p class="card-text">Amandes, Orange</p>
+        <a href="{{path("ingredients")}}" class ="btn btn-primary">Ingrédients </a>  
+      </div>
+    </div>
+
+
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header">{{nomPatisserie}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{nomPatisserie}}</h4>
+          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
+        <p class="card-text">Amandes, Orange</p>
+        <a href="{{path("ingredients")}}" class ="btn btn-primary">Ingrédients </a>  
+      </div>
+    </div>
+
+
+
+  
+
+  </div>
+</section>
 {% endblock %}
