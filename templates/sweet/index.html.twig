@@ -7,49 +7,23 @@
 <section class ="sweets">
   <div align ="center">
 
+
+    {% for sweet in sweets %}
     <div class="card border-secondary mb-3" style="max-width: 20rem;">
-      <div class="card-header">{{nomPatisserie}}</div>
+      <div class="card-header">{{sweet.name}}</div>
       <div class="card-body">
-        <h4 class="card-title">{{nomPatisserie}}</h4>
-          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
-        <p class="card-text">Amandes, Orange</p>
-        <a href="{{ path("ingredients") }}" class ="btn btn-primary">Ingrédients </a>  
+          <img style="height: 200px; width: 100%; display: block;" src={{sweet.image}} alt="Image de {{sweet.name}}">
+        <p class="card-text">
+          <div class = "ing">
+             {% for ingredient in  sweet.ingredient %} 
+                 {{ingredient.name}} &nbsp
+             {% endfor %}
+           </div>
+        </p>
+        <a href="{{path("ingredients", {"id" : sweet.id})}}" class ="btn btn-primary">Ingrédients </a>  
       </div>
     </div>
-
-
-    <div class="card border-secondary mb-3" style="max-width: 20rem;">
-      <div class="card-header">{{nomPatisserie}}</div>
-      <div class="card-body">
-        <h4 class="card-title">{{nomPatisserie}}</h4>
-          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
-        <p class="card-text">Amandes, Orange</p>
-        <a href="{{path("ingredients")}}" class ="btn btn-primary">Ingrédients </a>  
-      </div>
-    </div>
-
-
-    <div class="card border-secondary mb-3" style="max-width: 20rem;">
-      <div class="card-header">{{nomPatisserie}}</div>
-      <div class="card-body">
-        <h4 class="card-title">{{nomPatisserie}}</h4>
-          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
-        <p class="card-text">Amandes, Orange</p>
-        <a href="{{path("ingredients")}}" class ="btn btn-primary">Ingrédients </a>  
-      </div>
-    </div>
-
-
-    <div class="card border-secondary mb-3" style="max-width: 20rem;">
-      <div class="card-header">{{nomPatisserie}}</div>
-      <div class="card-body">
-        <h4 class="card-title">{{nomPatisserie}}</h4>
-          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de {{nomPatisserie}}">
-        <p class="card-text">Amandes, Orange</p>
-        <a href="{{path("ingredients")}}" class ="btn btn-primary">Ingrédients </a>  
-      </div>
-    </div>
-
+    {% endfor %}
 
 
   

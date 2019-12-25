@@ -1,9 +1,28 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme formSweet 'bootstrap_4_layout.html.twig' %}
+
 {% block body %}
-<h1> Nouvelle patisserie </h1>
+    <h1>
+        {% if editMode %}
+            Modifications
+        {% else %}
+            Nouvelle pâtisserie
+        {% endif %}
+    </h1>
+    {{ form_start(formSweet) }}
 
-<h2>Nom de la pâtisserie</h2>
+    {{ form_row(formSweet.name, {'attr': {'placeholder' : "Nom de la pâtisserie"}}) }}
+    {{ form_row(formSweet.image, {'attr': {'placeholder' : "URL de l'image"}}) }}
+    {{ form_row(formSweet.ingredient) }}
 
-<h2>Ingrédients</h2>
+    <button type="submit" class="btn btn-success">
+        {% if editMode %}
+            Modifier
+        {% else %}
+            Ajouter la nouvelle pâtisserie
+        {% endif %}
+    </button>
+    
+    {{ form_end(formSweet) }}
 {% endblock %}

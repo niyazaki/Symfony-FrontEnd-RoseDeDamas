@@ -3,14 +3,18 @@
 {% block body %}
 
     <div class="card border-secondary mb-3" style="max-width: 20rem;">
-      <div class="card-header">Bourse orange a changer</div>
+      <div class="card-header">{{sweets.name}}</div>
       <div class="card-body">
-        <h4 class="card-title">Bourse orange a changer</h4>
-          <img style="height: 200px; width: 100%; display: block;" src="http://placehold.it/200x120" alt="Image de Bourse orange a changer">
-        <p class="card-text">Amandes, Orange</p>
+          <img style="height: 200px; width: 100%; display: block;" src={{sweets.image}} alt="Image de {{sweets.name}}">
       </div>
     </div>
-    <h3 text-align = "center"> Liste des ingrédients : 
-    <div class = "ing"> Amandes, Orange </div>
-    </h3>
+    <h3 text-align = "center"> Liste des ingrédients : </h3>
+      <div class = "ing">
+        <ul>
+        {% for ingredient in  sweets.ingredient %} 
+          <li> {{ingredient.name}} </li>
+        {% endfor %}
+        </ul>
+      </div>
+    
 {% endblock %}
