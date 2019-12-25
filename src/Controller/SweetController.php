@@ -22,13 +22,12 @@ class SweetController extends AbstractController
         $sweets = $repo->findAll();
                 
         return $this->render('sweet/index.html.twig', [
-            'nomPatisserie' => 'Bourse Orange',
             'sweets' => $sweets
         ]);
     }
 
     /**
-     * @Route("/ingredients/{id}", name = "ingredients")
+     * @Route("/sweet/{id}", name = "ingredients")
      */
     public function ingredients(Sweets $sweets) 
     {
@@ -40,9 +39,11 @@ class SweetController extends AbstractController
 
     /**
      * @Route("/new", name="new")
-     * @Route("/sweets/{id}/edit", name="edit")
+     * @Route("/sweet/{id}/edit", name="edit")
      */
-    public function form(Sweets $sweet = null, Request $request, ObjectManager $manager)
+    public function form(Sweets $sweet = null, 
+                        Request $request, 
+                        ObjectManager $manager)
     {
         if(!$sweet){
             $sweet = new Sweets();
